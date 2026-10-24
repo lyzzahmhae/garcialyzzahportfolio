@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Certificates and professional development activities of Lyzzah Mhae Artillera Garcia.">
+  <title>Certificates &amp; Activities | Lyzzah Garcia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f5; --paper: #ffffff; --ink: #1a1416; --ink-2: #4d4247; --muted: #8a7d83;
+      --line: #ece4e6; --accent: #6b1a35; --accent-soft: #f6e9ed; --accent-2: #8e2447;
+      --radius: 12px; --shadow: 0 1px 2px rgba(58,16,30,.04), 0 8px 24px -16px rgba(58,16,30,.18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+    .serif { font-family: "Inter", system-ui, sans-serif; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+    .nav { height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-family: "Inter", sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; white-space: nowrap; }
+    .brand span { color: var(--accent-2); }
+    .brand::before { content: "LG"; display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: var(--accent); color: #fff; font-size: .8rem; margin-right: 10px; vertical-align: middle; }
+    .nav-links { display: flex; gap: 4px; white-space: nowrap; }
+    .nav-links a { padding: 8px 16px; border-radius: 999px; font-size: .92rem; font-weight: 600; color: var(--ink-2); }
+    .nav-links a:hover { background: var(--paper); color: var(--ink); }
+    .nav-links a.active { background: var(--accent); color: #fff; }
+
+    /* Shared */
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .76rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: currentColor; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .panel { padding: 28px; }
+    .h2 { font-family: "Inter", sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: -.01em; display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .h2 .num { font-family: "Inter", sans-serif; font-size: .72rem; font-weight: 800; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: .76rem; font-weight: 700; padding: 5px 11px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px; font-weight: 700; font-size: .92rem; }
+    .btn-dark { background: var(--ink); color: var(--bg); }
+    .btn-dark:hover { background: var(--accent); }
+    .btn-dark { background: var(--accent); }
+    .btn-dark:hover { background: var(--ink); }
+    .btn-light { background: var(--paper); border: 1px solid var(--line); }
+    .btn-light:hover { border-color: var(--ink); }
+    .grid { display: grid; gap: 20px; }
+    section { margin-bottom: 20px; }
+
+    /* Home hero */
+    .hero { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: center; padding: 44px 0 36px; }
+    .hero h1 { font-family: "Inter", sans-serif; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.08; letter-spacing: -.035em; margin: 14px 0 12px; }
+    .hero h1 em { font-style: normal; }
+    .hero .course { font-size: 1.08rem; color: var(--ink-2); font-weight: 600; margin-bottom: 14px; }
+    .hero .lead { color: var(--ink-2); max-width: 600px; margin-bottom: 26px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    .portrait { position: relative; aspect-ratio: 1 / 1; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff; }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .portrait-tag { position: absolute; left: 12px; right: 12px; bottom: 12px; background: rgba(255,255,255,.95); border-radius: 12px; padding: 9px 14px; font-size: .8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .portrait-tag i { width: 8px; height: 8px; border-radius: 50%; background: #16a34a; flex-shrink: 0; }
+
+    /* Home grids */
+    .row-a { grid-template-columns: 2fr 1fr; }
+    .row-b { grid-template-columns: repeat(3, 1fr); }
+    .about p { color: var(--ink-2); margin-bottom: 12px; }
+    .about-cols { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; }
+    .interests { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 600px) { .interests { grid-template-columns: 1fr; } }
+    .mini { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 800; margin-bottom: 10px; }
+    .interests { list-style: none; display: grid; gap: 8px; }
+    .interests li { padding: 9px 14px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); font-weight: 600; font-size: .9rem; }
+    .info-list .row { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+    .info-list .row:first-child { padding-top: 0; }
+    .info-list .row:last-child { border: 0; padding-bottom: 0; }
+    .info-list dt { color: var(--muted); font-weight: 600; }
+    .info-list dd { font-weight: 600; word-break: break-word; }
+    .contact { display: grid; gap: 10px; }
+    .contact-item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); }
+    a.contact-item:hover { border-color: var(--accent); background: var(--paper); }
+    .contact-item .ic { width: 38px; height: 38px; border-radius: 10px; background: var(--accent); color: #fff; display: grid; place-items: center; flex-shrink: 0; }
+    .contact-item .ic svg { width: 17px; height: 17px; }
+    .contact-item small { display: block; font-size: .72rem; color: var(--muted); font-weight: 600; }
+    .contact-item span { font-weight: 700; font-size: .9rem; word-break: break-all; }
+    .timeline { position: relative; padding-left: 24px; display: grid; gap: 20px; }
+    .timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+    .t-item { position: relative; }
+    .t-item::before { content: ""; position: absolute; left: -24px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 3px solid var(--accent); }
+    .t-date { font-size: .76rem; font-weight: 700; color: var(--accent); }
+    .t-item h4 { font-size: .98rem; margin: 2px 0; }
+    .t-item p { color: var(--ink-2); font-size: .88rem; }
+    .skill + .skill { margin-top: 14px; }
+    .project { padding: 24px; display: flex; flex-direction: column; }
+    .p-type { font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-2); }
+    .project h3 { font-family: "Inter", sans-serif; font-weight: 800; font-size: 1.05rem; line-height: 1.25; margin: 6px 0 8px; }
+    .project > p { color: var(--ink-2); font-size: .92rem; margin-bottom: 14px; }
+    .contrib { background: var(--bg); border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; flex: 1; }
+    .contrib b { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+    .contrib ul { margin: 4px 0 0 18px; color: var(--ink-2); font-size: .88rem; }
+    .pd { grid-template-columns: repeat(5, 1fr); }
+    .pd-card { padding: 20px; display: flex; flex-direction: column; }
+    .pd-card:hover { border-color: var(--accent); }
+    .pd-card b { font-family: "Inter", sans-serif; font-weight: 800; font-size: 2rem; line-height: 1; color: var(--accent); margin-bottom: 8px; }
+    .pd-card span { font-weight: 800; }
+    .pd-card small { color: var(--muted); font-weight: 600; font-size: .78rem; }
+    .resume-cta { background: var(--accent); color: #eef3f9; border-radius: 20px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin: 20px 0 48px; }
+    .resume-cta h2 { font-family: "Inter", sans-serif; font-weight: 800; font-size: 1.45rem; margin-bottom: 6px; }
+    .resume-cta p { opacity: .85; max-width: 520px; }
+    .btn-cream { background: #ffffff; color: var(--ink); }
+    .btn-outline { border: 1px solid rgba(255,255,255,.45); color: #fff; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    /* Certificates page */
+    .page-head { padding: 40px 0 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+    .page-head h1 { font-family: "Inter", sans-serif; font-weight: 800; font-size: clamp(2rem, 4.6vw, 3.2rem); letter-spacing: -.03em; line-height: 1.05; margin: 12px 0 8px; }
+    .page-head p { color: var(--ink-2); max-width: 620px; }
+    .total { text-align: right; }
+    .total b { font-family: "Inter", sans-serif; font-weight: 800; font-size: 2.4rem; line-height: 1; color: var(--accent); display: block; }
+    .total span { font-size: .8rem; font-weight: 700; color: var(--muted); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; padding: 6px 0 8px; }
+    .filters a { padding: 8px 16px; border-radius: 999px; font-size: .86rem; font-weight: 700; background: var(--paper); border: 1px solid var(--line); color: var(--ink-2); }
+    .filters a:hover { border-color: var(--ink); color: var(--ink); }
+    .filters a small { color: var(--muted); font-weight: 700; margin-left: 4px; }
+    .doc-section { padding-top: 32px; scroll-margin-top: 80px; }
+    .doc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 6px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+    .doc-head h2 { font-family: "Inter", sans-serif; font-weight: 800; font-size: 1.25rem; letter-spacing: -.01em; }
+    .doc-head .count { font-size: .84rem; color: var(--muted); font-weight: 700; white-space: nowrap; }
+    .note { color: var(--ink-2); font-size: .9rem; margin: 8px 0 0; }
+    .docs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 18px; counter-reset: doc; }
+    .doc { overflow: hidden; display: flex; flex-direction: column; counter-increment: doc; }
+    .doc:hover { border-color: var(--accent); }
+    .thumb { position: relative; display: block; height: 0; padding-top: 70.7%; overflow: hidden; background: #eeeae2; border-bottom: 1px solid var(--line); }
+    .docs.tall .thumb { padding-top: 120%; }
+    .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .thumb { min-height: 0; flex-shrink: 0; }
+    .thumb::before { z-index: 1; content: counter(doc); position: absolute; top: 10px; left: 10px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: #fff; font-weight: 800; font-size: .85rem; }
+    .doc-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+    .kind { font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 4px; }
+    .doc-body h3 { font-size: .98rem; line-height: 1.35; margin-bottom: 4px; }
+    .meta { color: var(--muted); font-size: .8rem; font-weight: 600; margin-bottom: 12px; }
+    .links { margin-top: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+    .links a { font-size: .84rem; font-weight: 800; color: var(--accent); }
+    .links a:hover { text-decoration: underline; }
+    .links a.dl { color: var(--accent-2); }
+    .doc { transition: border-color .2s, box-shadow .2s; }
+    .doc:hover { box-shadow: 0 1px 2px rgba(58,16,30,.04), 0 16px 32px -18px rgba(58,16,30,.35); }
+
+    footer { border-top: 1px solid var(--line); padding: 24px 0; margin-top: 32px; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: .85rem; color: var(--muted); }
+    footer b { color: var(--ink); }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .docs { grid-template-columns: repeat(3, 1fr); }
+      .pd { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 28px; }
+      .portrait { max-width: 240px; order: -1; }
+      .row-a, .row-b { grid-template-columns: 1fr; }
+      .about-cols { grid-template-columns: 1fr; gap: 18px; }
+      .docs { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+      .brand { font-size: 1.1rem; }
+      .nav-links a { padding: 7px 12px; font-size: .84rem; }
+      .nav-links .long { display: none; }
+      .panel { padding: 22px 18px; }
+      .pd { grid-template-columns: 1fr 1fr; }
+      .info-list .row { grid-template-columns: 1fr; gap: 0; }
+      .docs { grid-template-columns: 1fr; }
+      .docs.tall { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .docs.tall .doc-body { padding: 12px; }
+      .resume-cta { padding: 26px 20px; }
+      .resume-cta .btn { width: 100%; justify-content: center; }
+      .total { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">Lyzzah Garcia<span>.</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" class="active"><span class="long">Certificates &amp; </span>Activities</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="page-head">
+    <div>
+      <span class="eyebrow">Professional Development</span>
+      <h1>Certificates &amp; Activities</h1>
+      <p>Select any item to open the original file.</p>
+    </div>
+    <div class="total"><b>14</b><span>certificates</span></div>
+  </div>
+
+  <nav class="filters">
+    <a href="#webinars">Webinar</a>
+    <a href="#seminars">Seminars &amp; Workshops</a>
+    <a href="#cisco">Cisco</a>
+    <a href="#tesda">TESDA</a>
+    <a href="#microsoft">Microsoft</a>
+    <a href="#activities">ProfDev Activities</a>
+  </nav>
+
+  <section class="doc-section" id="webinars">
+    <div class="doc-head"><h2>Webinar Certificates</h2><span class="count">1 certificate</span></div>
+    <div class="docs">
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/webinars/dict-passion-to-profession.pdf" target="_blank" rel="noopener"><img src="assets/previews/dict-passion-to-profession.webp" alt="Preview of From Passion to Profession: Building Creative Careers through Digital Skills" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>From Passion to Profession: Building Creative Careers through Digital Skills</h3>
+          <p class="meta">DICT – Cordillera Administrative Region · June 30, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/webinars/dict-passion-to-profession.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section" id="seminars">
+    <div class="doc-head"><h2>Seminars &amp; Workshops</h2><span class="count">4 certificates</span></div>
+    <p class="note">10th IT Week · August 27, 2026 · NC Function Hall, Northeastern College · Theme: “IT Beyond Horizons: Igniting Innovation, Transforming Tomorrow”</p>
+    <div class="docs">
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/seminars/video-editing-tips-and-tricks.pdf" target="_blank" rel="noopener"><img src="assets/previews/video-editing-tips-and-tricks.webp" alt="Preview of Video Editing Tips &amp; Tricks" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Video Editing Tips &amp; Tricks</h3>
+          <p class="meta">Resource Speaker: Jad Ordonio</p>
+          <div class="links">
+            <a href="assets/pdfs/seminars/video-editing-tips-and-tricks.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/seminars/programming-fundamentals.pdf" target="_blank" rel="noopener"><img src="assets/previews/programming-fundamentals.webp" alt="Preview of Programming Fundamentals" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Programming Fundamentals</h3>
+          <p class="meta">Resource Speaker: Jayson Salatan</p>
+          <div class="links">
+            <a href="assets/pdfs/seminars/programming-fundamentals.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/seminars/agentic-ai.pdf" target="_blank" rel="noopener"><img src="assets/previews/agentic-ai.webp" alt="Preview of Agentic AI" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Agentic AI</h3>
+          <p class="meta">Resource Speaker: Jexter Tomas</p>
+          <div class="links">
+            <a href="assets/pdfs/seminars/agentic-ai.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/seminars/integrating-iot-in-capstone-project.pdf" target="_blank" rel="noopener"><img src="assets/previews/integrating-iot-in-capstone-project.webp" alt="Preview of Integrating IoT in Capstone Project" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Integrating IoT in Capstone Project</h3>
+          <p class="meta">Resource Speaker: Allan Taracatac, DIT</p>
+          <div class="links">
+            <a href="assets/pdfs/seminars/integrating-iot-in-capstone-project.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section" id="cisco">
+    <div class="doc-head"><h2>Cisco Certificates</h2><span class="count">2 certificates</span></div>
+    <p class="note">Cisco Networking Academy</p>
+    <div class="docs">
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/cisco/networking-basics.pdf" target="_blank" rel="noopener"><img src="assets/previews/networking-basics.webp" alt="Preview of Networking Basics" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Networking Basics</h3>
+          <p class="meta">Completed September 27, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/cisco/networking-basics.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/cisco/data-analytics-essentials.pdf" target="_blank" rel="noopener"><img src="assets/previews/data-analytics-essentials.webp" alt="Preview of Data Analytics Essentials" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Data Analytics Essentials</h3>
+          <p class="meta">Completed September 24, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/cisco/data-analytics-essentials.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section" id="tesda">
+    <div class="doc-head"><h2>TESDA Certificates</h2><span class="count">5 certificates</span></div>
+    <p class="note">TESDA Online Program</p>
+    <div class="docs">
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/tesda/introduction-to-computer-systems-servicing.pdf" target="_blank" rel="noopener"><img src="assets/previews/introduction-to-computer-systems-servicing.webp" alt="Preview of Introduction to Computer Systems Servicing" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Introduction to Computer Systems Servicing</h3>
+          <p class="meta">Completed August 7, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/tesda/introduction-to-computer-systems-servicing.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/tesda/installing-and-configuring-computer-systems.pdf" target="_blank" rel="noopener"><img src="assets/previews/installing-and-configuring-computer-systems.webp" alt="Preview of Installing and Configuring Computer Systems" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Installing and Configuring Computer Systems</h3>
+          <p class="meta">Completed August 5, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/tesda/installing-and-configuring-computer-systems.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/tesda/maintaining-computer-systems-and-networks.pdf" target="_blank" rel="noopener"><img src="assets/previews/maintaining-computer-systems-and-networks.webp" alt="Preview of Maintaining Computer Systems and Networks" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Maintaining Computer Systems and Networks</h3>
+          <p class="meta">Completed August 10, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/tesda/maintaining-computer-systems-and-networks.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/tesda/setting-up-computer-networks.pdf" target="_blank" rel="noopener"><img src="assets/previews/setting-up-computer-networks.webp" alt="Preview of Setting Up Computer Networks" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Setting Up Computer Networks</h3>
+          <p class="meta">Completed August 12, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/tesda/setting-up-computer-networks.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/tesda/setting-up-computer-servers.pdf" target="_blank" rel="noopener"><img src="assets/previews/setting-up-computer-servers.webp" alt="Preview of Setting Up Computer Servers" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Setting Up Computer Servers</h3>
+          <p class="meta">Completed August 15, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/tesda/setting-up-computer-servers.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section" id="microsoft">
+    <div class="doc-head"><h2>Microsoft Certificates</h2><span class="count">2 certificates</span></div>
+    <p class="note">Microsoft Learn</p>
+    <div class="docs">
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/microsoft/write-your-first-csharp-code.pdf" target="_blank" rel="noopener"><img src="assets/previews/write-your-first-csharp-code.webp" alt="Preview of Write Your First C# Code" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Write Your First C# Code</h3>
+          <p class="meta">Completed September 26, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/microsoft/write-your-first-csharp-code.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/microsoft/debug-csharp-console-app-vscode.pdf" target="_blank" rel="noopener"><img src="assets/previews/debug-csharp-console-app-vscode.webp" alt="Preview of Challenge Project: Debug a C# Console Application using Visual Studio Code" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Challenge Project: Debug a C# Console Application using Visual Studio Code</h3>
+          <p class="meta">Completed September 28, 2026</p>
+          <div class="links">
+            <a href="assets/pdfs/microsoft/debug-csharp-console-app-vscode.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section" id="activities">
+    <div class="doc-head"><h2>ProfDev Activities</h2><span class="count">4 documents</span></div>
+    <p class="note">Click a preview to view the document, or use Download PDF to save a copy. Personal details such as phone number, home address, and birth date have been removed for privacy.</p>
+    <div class="docs tall">
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/activities/professional-resume.pdf" target="_blank" rel="noopener"><img src="assets/previews/professional-resume.webp" alt="Preview of Professional Resume" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Professional Resume</h3>
+          
+          <div class="links">
+            <a class="dl" href="assets/pdfs/activities/professional-resume.pdf" download="Lyzzah-Garcia-Professional-Resume.pdf">Download PDF ↓</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/activities/traditional-resume.pdf" target="_blank" rel="noopener"><img src="assets/previews/traditional-resume.webp" alt="Preview of Traditional Resume" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Traditional Resume</h3>
+          
+          <div class="links">
+            <a class="dl" href="assets/pdfs/activities/traditional-resume.pdf" download="Lyzzah-Garcia-Traditional-Resume.pdf">Download PDF ↓</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/activities/application-letter.pdf" target="_blank" rel="noopener"><img src="assets/previews/application-letter.webp" alt="Preview of Application Letter" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Application Letter</h3>
+          
+          <div class="links">
+            <a class="dl" href="assets/pdfs/activities/application-letter.pdf" download="Lyzzah-Garcia-Application-Letter.pdf">Download PDF ↓</a>
+          </div>
+        </div>
+      </article>
+      <article class="card doc">
+        <a class="thumb" href="assets/pdfs/activities/resignation-letter.pdf" target="_blank" rel="noopener"><img src="assets/previews/resignation-letter.webp" alt="Preview of Resignation Letter" loading="lazy"></a>
+        <div class="doc-body">
+          <h3>Resignation Letter</h3>
+          
+          <div class="links">
+            <a class="dl" href="assets/pdfs/activities/resignation-letter.pdf" download="Lyzzah-Garcia-Resignation-Letter.pdf">Download PDF ↓</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <b>Lyzzah Mhae Artillera Garcia</b>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
